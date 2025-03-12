@@ -6,11 +6,13 @@ import shelve
 
 load_dotenv()
 
-st.title("Streamlit Chatbot Interface")
+st.title("Phyllo Chatbot")
 
 USER_AVATAR = "👤"
 BOT_AVATAR = "🤖"
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+api_key = os.getenv("OPENAI_API_KEY")
+print(api_key)
+client = OpenAI(api_key=api_key)
 
 # Ensure openai_model is initialized in session state
 if "openai_model" not in st.session_state:
